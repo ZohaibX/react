@@ -3,7 +3,9 @@ import jwtDecoded from "jwt-decode";
 export function gettingUserData() {
   try {
     const jwt: any = localStorage.getItem("token");
-    return jwtDecoded(jwt); // this is a new npm import ooper
+    const decodedData = jwtDecoded(jwt); // this is a new npm import ooper
+    console.log(decodedData);
+    return decodedData;
   } catch (e) {
     // if user doesn't have a token in his local storage -- then server will be crashed
     // to handle this exception -- we must have a try catch block
